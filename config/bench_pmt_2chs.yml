@@ -1,0 +1,7 @@
+---
+# board_ip : "10.9.9.5"
+board_ip : "172.0.0.10"
+threshold_ch_0: 8200
+#threshold_ch_1: 57400
+nch_trig: 1
+mux: 1
