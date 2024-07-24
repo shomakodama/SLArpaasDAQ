@@ -1,0 +1,26 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("b6ce38ab-e811-49fd-b977-958aab7c303c") = "SLArpaas_test11_Example", "SLArpaas_test11_EXAMPLE.vcxproj", "e4de296d-59c7-42e2-b0c4-1459d66a6a1c"
+EndProject
+Project("b6ce38ab-e811-49fd-b977-958aab7c303c") = "SLArpaas_test11_LIB", "SLArpaas_test11_LIB.vcxproj", "aab179da-9a27-4cdc-938b-52be78caf3ce"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		e4de296d-59c7-42e2-b0c4-1459d66a6a1c.Debug|x86.ActiveCfg = Debug|Win32
+		e4de296d-59c7-42e2-b0c4-1459d66a6a1c.Debug|x86.Build.0 = Debug|Win32
+		e4de296d-59c7-42e2-b0c4-1459d66a6a1c.Release|x86.ActiveCfg = Release|Win32
+		e4de296d-59c7-42e2-b0c4-1459d66a6a1c.Release|x86.Build.0 = Release|Win32
+		aab179da-9a27-4cdc-938b-52be78caf3ce.Debug|x86.ActiveCfg = Debug|Win32
+		aab179da-9a27-4cdc-938b-52be78caf3ce.Debug|x86.Build.0 = Debug|Win32
+		aab179da-9a27-4cdc-938b-52be78caf3ce.Release|x86.ActiveCfg = Release|Win32
+		aab179da-9a27-4cdc-938b-52be78caf3ce.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
