@@ -27,7 +27,7 @@ channelsenabled = 1
 ## sample length
 samplelength = 1250
 ## ??
-DownloadDataNumber = 1250
+size = (channelsenabled*samplelength + 10)
 
 
 
@@ -123,6 +123,7 @@ def daq(handle, output_file_name, max_evt):
     output_file = open("data/%s"%(output_file_name),"a")
 
     read_evt = 0
+    TargetDataNumber = size * max_evt/2
 
     try:
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_RESET(handle) != 0):
@@ -130,12 +131,12 @@ def daq(handle, output_file_name, max_evt):
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(channelsenabled, handle) == True):
             [err, List_Status] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_STATUS(handle)
             if List_Status > 0:
-                while read_evt < max_evt:
-                    [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(DownloadDataNumber, Timeout_ms, handle)
+                while TargetDataNumber > 0:
+                    [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(size, Timeout_ms, handle)
                     n_valid = int(List_Valid_Data.value)
                     for i in range(n_valid):
                         output_file.write('%x\n'%(List_Data[i]))
-                    read_evt += 1
+                    TargetDataNumber -= n_valid
             else:
                 print("Status Error")
         else:
