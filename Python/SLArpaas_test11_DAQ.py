@@ -14,9 +14,14 @@ Timeout_ms = 1000
 externaltrigger = 0 # 0: disable, 1: enable
 
 ## self trigger
+### ch0
 threshold0 = 8150
 polarity0 = 1 # 0: rising edge, 1: falling edge
 enabletrigger0 = 1
+### ch1
+# threshold1 = 8150
+# polarity1 = 1 # 0: rising edge, 1: falling edge
+# enabletrigger1 = 1
 
 # counter
 enablecounter = 1 # 0: disable, 1: enable
@@ -82,9 +87,18 @@ def main():
     SLArpaasFunc.REG_Polarity0_SET(polarity0, handle)
     SLArpaasFunc.REG_EnTrigger0_SET(enabletrigger0, handle)
     if(enabletrigger0 == 1):
-        print("Threshold (ch0) set to ", threshold0, " ADC")
+        print("Threshold (ch0) set to ", threshold0)
     else:
         print("Self trigger for ch0: disabled")
+
+    ## self trigger (ch1)
+    # SLArpaasFunc.REG_Threshold1_SET(threshold1, handle)
+    # SLArpaasFunc.REG_Polarity1_SET(polarity1, handle)
+    # SLArpaasFunc.REG_EnTrigger1_SET(enabletrigger1, handle)
+    # if(enabletrigger1 == 1):
+    #     print("Threshold (ch1) set to ", threshold1)
+    # else:
+    #     print("Self trigger for ch1: disabled")
 
     time.sleep(0.01)
 
