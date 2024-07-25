@@ -29,23 +29,23 @@ enabletrigger0 = 1
 ### ch1
 threshold1 = 8150
 polarity1 = 1 # 0: rising edge, 1: falling edge
-enabletrigger1 = 1
+enabletrigger1 = 0
 ### ch2
 threshold2 = 8150
 polarity2 = 1 # 0: rising edge, 1: falling edge
-enabletrigger2 = 1
+enabletrigger2 = 0
 ### ch3
 threshold3 = 8150
 polarity3 = 1 # 0: rising edge, 1: falling edge
-enabletrigger3 = 1
+enabletrigger3 = 0
 ### ch4
 threshold4 = 8150
 polarity4 = 1 # 0: rising edge, 1: falling edge
-enabletrigger4 = 1
+enabletrigger4 = 0
 ### ch5
 threshold5 = 8150
 polarity5 = 1 # 0: rising edge, 1: falling edge
-enabletrigger5 = 1
+enabletrigger5 = 0
 
 # counter
 enablecounter = 1 # 0: disable, 1: enable
