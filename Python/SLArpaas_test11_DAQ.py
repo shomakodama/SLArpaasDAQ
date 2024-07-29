@@ -114,12 +114,12 @@ def daq(handle, output_file_name, max_evt):
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(SLArpaas_test11_Parameters.channelsenabled, handle) == True):
             [err, List_Status] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_STATUS(handle)
             if List_Status > 0:
-                while TargetDataNumber > 0:
+                while read_evt < max_evt:
                     [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(SLArpaas_test11_Parameters.size, SLArpaas_test11_Parameters.Timeout_ms, handle)
                     n_valid = int(List_Valid_Data.value)
                     for i in range(n_valid):
                         output_file.write('%x\n'%(List_Data[i]))
-                    TargetDataNumber -= n_valid
+                    read_evt += 1
             else:
                 print("Status Error")
         else:
