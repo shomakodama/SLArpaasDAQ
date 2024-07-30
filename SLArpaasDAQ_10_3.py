@@ -1,21 +1,9 @@
-import SLArpaas_test9_Functions as SLArpaasfunc
+import SLArpaas_test10_Functions as SLArpaasfunc
+import SLArpaasDAQ_10_3_Parameters as SLArpaasParam
 from ctypes import *
 import time
 import argparse
 
-board       = "127.0.0.10"
-#sleep_time  = 0.000002 #1
-
-# external trigger
-enext0 = 0 # 0:disable, 1:enable
-# self trigger
-enself0 = 1 # 0:disable, 1:enable
-threshold0   = 8150
-polarity0 = 1 # 0:rising edge, 1:falling edge
-
-N_Packet = 100
-Timeout_ms = 10000
-# N_Total_Events = 10000
 
 
 
@@ -25,7 +13,7 @@ def options():
 
     parser = argparse.ArgumentParser(usage=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("-o",
-                        default="caen_test.dat",
+                        default="caen_test",
                         help="Output file name")
     parser.add_argument("-n",
                         default=10,
@@ -51,22 +39,26 @@ def main():
 
     # Connect to board
     SLArpaasfunc.Init()
-    [err, handle] = SLArpaasfunc.ConnectDevice(board)
+    [err, handle] = SLArpaasfunc.ConnectDevice(SLArpaasParam.board)
     if (err == 0):
-        print("Successful connection to board ", board)
+        print("Successful connection to board ", SLArpaasParam.board)
     else:
         print("Connection Error")
 
 
     # Set trigger settings
-    SLArpaasfunc.REG_ManualTrigger_SET(0, handle) # not set
-    SLArpaasfunc.REG_EnExternalTrigger_SET(enext0, handle)
+    SLArpaasfunc.REG_ManualTrigger_SET(SLArpaasParam.manualtriggerOFF, handle) # not set
+    SLArpaasfunc.REG_EnExternalTrigger_SET(SLArpaasParam.enext0, handle)
 
-    SLArpaasfunc.REG_Threshold0_SET(threshold0, handle)
-    SLArpaasfunc.REG_Polarity0_SET(polarity0, handle)
-    SLArpaasfunc.REG_EnTrigger0_SET(enself0, handle)
+    SLArpaasfunc.REG_Threshold0_SET(SLArpaasParam.threshold0, handle)
+    SLArpaasfunc.REG_Polarity0_SET(SLArpaasParam.polarity0, handle)
+    SLArpaasfunc.REG_EnTrigger0_SET(SLArpaasParam.enself0, handle)
 
-    print("Threshold set to ", threshold0)
+    SLArpaasfunc.REG_Threshold1_SET(SLArpaasParam.threshold1, handle)
+    SLArpaasfunc.REG_Polarity1_SET(SLArpaasParam.polarity1, handle)
+    SLArpaasfunc.REG_EnTrigger1_SET(SLArpaasParam.enself1, handle)
+
+    print("Threshold set to ", SLArpaasParam.threshold0)
 
     time.sleep(0.01)
 
@@ -104,11 +96,11 @@ def tcp_rec(handle, output_file_name, N_Total_Events):
             [err, frame_status] = SLArpaasfunc.CPACK_CP_0_GET_STATUS(handle)
             if frame_status > 0:
                 while ReadDataNumber < N_Total_Events:
-                    [err, Frame_Data, Frame_Read_Data, Frame_Valid_Data] = SLArpaasfunc.CPACK_CP_0_GET_DATA(N_Packet, Timeout_ms, handle)
+                    [err, Frame_Data, Frame_Read_Data, Frame_Valid_Data] = SLArpaasfunc.CPACK_CP_0_GET_DATA(SLArpaasParam.N_Packet, SLArpaasParam.Timeout_ms, handle)
                     n_valid = int(Frame_Valid_Data.value)
                     for i in range(n_valid):
-                        output_file.write('%x'%(Frame_Data[i]))
-                    ReadDataNumber += N_Packet
+                        output_file.write('%x\n'%(Frame_Data[i]))
+                    ReadDataNumber += SLArpaasParam.N_Packet
                     #time.sleep(sleep_time)
 
             else:
