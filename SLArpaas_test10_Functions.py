@@ -345,7 +345,7 @@ def CPACK_CP_0_GET_AVAILABLE_DATA(handle):
     return err, status
 
 def CPACK_CP_0_GET_DATA(n_packet, timeout_ms, handle):
-    data_length = n_packet *( 3 + 21 )
+    data_length = n_packet
     [err, data, read_data, valid_data] = __abstracted_fifo_read(data_length, SLArpaas_test10_RegisterFile.SCI_REG_CP_0_FIFOADDRESS, SLArpaas_test10_RegisterFile.SCI_REG_CP_0_READ_STATUS, True, timeout_ms, handle)
     return err, data, read_data, valid_data
 

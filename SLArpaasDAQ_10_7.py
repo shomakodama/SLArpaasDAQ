@@ -1,5 +1,5 @@
 import SLArpaas_test10_Functions as SLArpaasfunc
-import SLArpaasDAQ_10_3_Parameters as SLArpaasParam
+import SLArpaasDAQ_10_7_Parameters as SLArpaasParam
 from ctypes import *
 import time
 import argparse
@@ -96,7 +96,7 @@ def tcp_rec(handle, output_file_name, N_Total_Events):
             [err, frame_status] = SLArpaasfunc.CPACK_CP_0_GET_STATUS(handle)
             if frame_status > 0:
                 while ReadDataNumber < N_Total_Events:
-                    [err, Frame_Data, Frame_Read_Data, Frame_Valid_Data] = SLArpaasfunc.CPACK_CP_0_GET_DATA(SLArpaasParam.N_Packet, SLArpaasParam.Timeout_ms, handle)
+                    [err, Frame_Data, Frame_Read_Data, Frame_Valid_Data] = SLArpaasfunc.CPACK_CP_0_GET_DATA(SLArpaasParam.buff_size, SLArpaasParam.Timeout_ms, handle)
                     n_valid = int(Frame_Valid_Data.value)
                     for i in range(n_valid):
                         output_file.write('%x\n'%(Frame_Data[i]))

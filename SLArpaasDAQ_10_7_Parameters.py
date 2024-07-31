@@ -15,8 +15,15 @@ threshold1   = 8150
 polarity1 = 1 # 0:rising edge, 1:falling edge
 
 
+header_len = 4
+channel_len = 8
+partition_len = 1
+footer_len = 1
+nsamples = 16
+nchannels = 2
 
-N_Packet = 200
+buff_size = header_len + nsamples*channel_len*nchannels + partition_len*(nchannels-1) + footer_len
+n_packet = 100
 Timeout_ms = 10000
 # N_Total_Events = 10000
 
