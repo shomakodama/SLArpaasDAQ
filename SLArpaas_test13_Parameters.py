@@ -58,8 +58,8 @@ enablecounter = 1 # 0: disable, 1: enable
 ### 4: ch0, ch1, ch2, ch3
 ### 5: ch0, ch1, ch2, ch3, ch4
 ### 6: ch0, ch1, ch2, ch3, ch4, ch5
-### 2-6: cannot be chosen for test11_v2
-channelsenabled = 1
+### 3-6: cannot be chosen for test13
+channelsenabled = 2
 ## sample length
 samplelength = 1250
 ## DAQ size

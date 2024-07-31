@@ -6,8 +6,8 @@
 
 
 
-import SLArpaas_test12_Functions as SLArpaasFunc
-import SLArpaas_test12_Parameters
+import SLArpaas_test13_Functions as SLArpaasFunc
+import SLArpaas_test13_Parameters
 from ctypes import *
 import time
 import argparse
@@ -39,9 +39,9 @@ def main():
 
 
     SLArpaasFunc.Init()
-    [err, handle] = SLArpaasFunc.ConnectDevice(SLArpaas_test12_Parameters.board)
+    [err, handle] = SLArpaasFunc.ConnectDevice(SLArpaas_test13_Parameters.board)
     if (err == 0):
-        print("Successful connection to board ", SLArpaas_test12_Parameters.board)
+        print("Successful connection to board ", SLArpaas_test13_Parameters.board)
     else:
         print("Connection Error")
 
@@ -49,21 +49,30 @@ def main():
 
     # Set trigger settings
     ## manual trigger
-    # SLArpaasFunc.REG_ManualTrigger_SET(SLArpaas_test12_Parameters.manualtriggerOFF, handle)
+    SLArpaasFunc.REG_ManualTrigger_SET(SLArpaas_test13_Parameters.manualtriggerOFF, handle)
 
     ## external trigger
-    # SLArpaasFunc.REG_EnExternalTrigger_SET(SLArpaas_test12_Parameters.externaltrigger, handle)
-    # if(SLArpaas_test12_Parameters.externaltrigger == 1):
-    #     print("External trigger: enabled")
-    # else:
-    #     print("External trigger: disabled")
+    SLArpaasFunc.REG_EnExternalTrigger_SET(SLArpaas_test13_Parameters.externaltrigger, handle)
+    if(SLArpaas_test13_Parameters.externaltrigger == 1):
+        print("External trigger: enabled")
+    else:
+        print("External trigger: disabled")
 
     ## self trigger (ch0)
-    SLArpaasFunc.REG_Threshold0_SET(SLArpaas_test12_Parameters.threshold0, handle)
-    SLArpaasFunc.REG_Polarity0_SET(SLArpaas_test12_Parameters.polarity0, handle)
-    SLArpaasFunc.REG_EnTrigger0_SET(SLArpaas_test12_Parameters.enabletrigger0, handle)
-    if(SLArpaas_test12_Parameters.enabletrigger0 == 1):
-        print("Threshold (ch0) set to ", SLArpaas_test12_Parameters.threshold0)
+    SLArpaasFunc.REG_Threshold0_SET(SLArpaas_test13_Parameters.threshold0, handle)
+    SLArpaasFunc.REG_Polarity0_SET(SLArpaas_test13_Parameters.polarity0, handle)
+    SLArpaasFunc.REG_EnTrigger0_SET(SLArpaas_test13_Parameters.enabletrigger0, handle)
+    if(SLArpaas_test13_Parameters.enabletrigger0 == 1):
+        print("Threshold (ch0) set to ", SLArpaas_test13_Parameters.threshold0)
+    else:
+        print("Self trigger for ch0: disabled")
+
+    ## self trigger (ch1)
+    SLArpaasFunc.REG_Threshold1_SET(SLArpaas_test13_Parameters.threshold1, handle)
+    SLArpaasFunc.REG_Polarity1_SET(SLArpaas_test13_Parameters.polarity1, handle)
+    SLArpaasFunc.REG_EnTrigger1_SET(SLArpaas_test13_Parameters.enabletrigger1, handle)
+    if(SLArpaas_test13_Parameters.enabletrigger1 == 1):
+        print("Threshold (ch0) set to ", SLArpaas_test13_Parameters.threshold1)
     else:
         print("Self trigger for ch0: disabled")
 
@@ -77,7 +86,7 @@ def main():
 
     time.sleep(0.01)
 
-    SLArpaasFunc.REG_CounterEnable_SET(SLArpaas_test12_Parameters.enablecounter, handle)
+    SLArpaasFunc.REG_CounterEnable_SET(SLArpaas_test13_Parameters.enablecounter, handle)
 
     time.sleep(0.01)
 
@@ -88,7 +97,7 @@ def main():
 
 
     # Set digitizer sample length
-    SLArpaasFunc.LISTMODULE_Digitizer_0_SetLen(handle, SLArpaas_test12_Parameters.samplelength)
+    SLArpaasFunc.LISTMODULE_Digitizer_0_SetLen(handle, SLArpaas_test13_Parameters.samplelength)
 
 
 
@@ -110,16 +119,16 @@ def daq(handle, output_file_name, max_evt):
     output_file = open("data/%s"%(output_file_name),"a")
 
     read_evt = 0
-    TargetDataNumber = SLArpaas_test12_Parameters.size * max_evt/2
+    TargetDataNumber = SLArpaas_test13_Parameters.size * max_evt/2
 
     try:
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_RESET(handle) != 0):
             print("Reset Error!")
-        if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(handle, SLArpaas_test12_Parameters.channelsenabled) == True):
+        if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(handle, SLArpaas_test13_Parameters.channelsenabled) == True):
             [err, List_Status] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_STATUS(handle)
             if List_Status > 0:
                 while TargetDataNumber > 0:
-                    [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(SLArpaas_test12_Parameters.size, SLArpaas_test12_Parameters.Timeout_ms, handle)
+                    [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(SLArpaas_test13_Parameters.size, SLArpaas_test13_Parameters.Timeout_ms, handle)
                     n_valid = int(List_Valid_Data.value)
                     for i in range(n_valid):
                         output_file.write('%x\n'%(List_Data[i]))
