@@ -157,7 +157,7 @@ def daq(handle, output_file_name, max_evt):
     # output_file = open("data/%s"%(output_file_name),"wb")
 
     read_evt = 0
-    TargetDataNumber = SLArpaas_test14_Parameters.size * max_evt/2
+    #  TargetDataNumber = SLArpaas_test14_Parameters.size * max_evt/2
 
     try:
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_RESET(handle) != 0):
@@ -165,7 +165,8 @@ def daq(handle, output_file_name, max_evt):
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(handle, SLArpaas_test14_Parameters.channelsenabled) == True):
             [err, List_Status] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_STATUS(handle)
             if List_Status > 0:
-                while TargetDataNumber > 0:
+                # while TargetDataNumber > 0:
+                while read_evt < max_evt:
                     [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(SLArpaas_test14_Parameters.size, SLArpaas_test14_Parameters.Timeout_ms, handle)
                     n_valid = int(List_Valid_Data.value)
                     err, data = SLArpaasFunc.REG_Counts_GET(handle) # number of triggers
@@ -174,7 +175,8 @@ def daq(handle, output_file_name, max_evt):
                         output_file.write('%x\n'%(List_Data[i]))
                     # np_arr  = np.ctypeslib.as_array(List_Data)[:List_Valid_Data.value]
                     # output_file.write(np_arr.tobytes())
-                    TargetDataNumber -= n_valid
+                    # TargetDataNumber -= n_valid
+                    read_evt += 1
             else:
                 print("Status Error")
         else:
