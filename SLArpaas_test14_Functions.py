@@ -1,7 +1,7 @@
 
 
 
-import SLArpaas_test14_v2_RegisterFile
+import SLArpaas_test14_RegisterFile
 from ctypes import *
 import array
 import numpy as np
@@ -82,227 +82,235 @@ def gray_to_bin(num, nbit):
     return temp    
 
 def REG_Threshold0_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold0, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold0, handle)
     return err, data
 
 def REG_Threshold0_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold0, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold0, handle)
     return err
 
 def REG_EnTrigger0_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger0, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger0, handle)
     return err, data
 
 def REG_EnTrigger0_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger0, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger0, handle)
     return err
 
 def REG_TimingReset_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_TimingReset, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_TimingReset, handle)
     return err, data
 
 def REG_TimingReset_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_TimingReset, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_TimingReset, handle)
     return err
 
 def REG_CounterEnable_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_CounterEnable, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_CounterEnable, handle)
     return err, data
 
 def REG_CounterEnable_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_CounterEnable, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_CounterEnable, handle)
     return err
 
 def REG_CounterReset_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_CounterReset, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_CounterReset, handle)
     return err, data
 
 def REG_CounterReset_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_CounterReset, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_CounterReset, handle)
     return err
 
 def REG_Counts_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Counts, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Counts, handle)
     return err, data
 
 def REG_Counts_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Counts, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Counts, handle)
     return err
 
 def REG_Polarity0_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity0, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity0, handle)
     return err, data
 
 def REG_Polarity0_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity0, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity0, handle)
     return err
 
 def REG_ManualTrigger_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_ManualTrigger, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_ManualTrigger, handle)
     return err, data
 
 def REG_ManualTrigger_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_ManualTrigger, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_ManualTrigger, handle)
     return err
 
 def REG_EnExternalTrigger_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnExternalTrigger, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnExternalTrigger, handle)
     return err, data
 
 def REG_EnExternalTrigger_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnExternalTrigger, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnExternalTrigger, handle)
     return err
 
 def REG_Threshold1_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold1, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold1, handle)
     return err, data
 
 def REG_Threshold1_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold1, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold1, handle)
     return err
 
 def REG_Polarity1_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity1, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity1, handle)
     return err, data
 
 def REG_Polarity1_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity1, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity1, handle)
     return err
 
 def REG_EnTrigger1_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger1, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger1, handle)
     return err, data
 
 def REG_EnTrigger1_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger1, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger1, handle)
     return err
 
 def REG_Threshold2_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold2, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold2, handle)
     return err, data
 
 def REG_Threshold2_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold2, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold2, handle)
     return err
 
 def REG_Polarity2_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity2, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity2, handle)
     return err, data
 
 def REG_Polarity2_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity2, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity2, handle)
     return err
 
 def REG_EnTrigger2_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger2, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger2, handle)
     return err, data
 
 def REG_EnTrigger2_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger2, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger2, handle)
     return err
 
 def REG_Threshold3_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold3, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold3, handle)
     return err, data
 
 def REG_Threshold3_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold3, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold3, handle)
     return err
 
 def REG_Polarity3_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity3, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity3, handle)
     return err, data
 
 def REG_Polarity3_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity3, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity3, handle)
     return err
 
 def REG_EnTrigger3_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger3, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger3, handle)
     return err, data
 
 def REG_EnTrigger3_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger3, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger3, handle)
     return err
 
 def REG_Threshold4_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold4, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold4, handle)
     return err, data
 
 def REG_Threshold4_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold4, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold4, handle)
     return err
 
 def REG_Polarity4_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity4, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity4, handle)
     return err, data
 
 def REG_Polarity4_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity4, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity4, handle)
     return err
 
 def REG_EnTrigger4_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger4, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger4, handle)
     return err, data
 
 def REG_EnTrigger4_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger4, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger4, handle)
     return err
 
 def REG_Threshold5_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold5, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Threshold5, handle)
     return err, data
 
 def REG_Threshold5_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Threshold5, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Threshold5, handle)
     return err
 
 def REG_Polarity5_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity5, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Polarity5, handle)
     return err, data
 
 def REG_Polarity5_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_Polarity5, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_Polarity5, handle)
     return err
 
 def REG_EnTrigger5_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger5, handle)
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger5, handle)
     return err, data
 
 def REG_EnTrigger5_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_v2_RegisterFile.SCI_REG_EnTrigger5, handle)
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger5, handle)
+    return err
+
+def REG_PreScaleFactor_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_PreScaleFactor, handle)
+    return err, data
+
+def REG_PreScaleFactor_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_PreScaleFactor, handle)
     return err
 
 
 
 def LISTMODULE_Digitizer_0_RESET(handle):
-    err = __abstracted_reg_write(2, SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
+    err = __abstracted_reg_write(2, SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
     return err
 
 def LISTMODULE_Digitizer_0_START(handle, channels):
-    err = __abstracted_reg_write(2 + (channels<<8), SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
+    err = __abstracted_reg_write(2 + (channels<<8), SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
     if (err != 0):
        return False
-    err = __abstracted_reg_write(0 + (channels<<8), SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
+    err = __abstracted_reg_write(0 + (channels<<8), SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
     if (err != 0):
        return False
-    err = __abstracted_reg_write(1 + (channels<<8), SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
+    err = __abstracted_reg_write(1 + (channels<<8), SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_CONFIG, handle)
     if (err != 0):
        return False
     return True
 
 def LISTMODULE_Digitizer_0_SetLen(handle, length):
-    err = __abstracted_reg_write(length, SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_ACQ_LEN, handle)
+    err = __abstracted_reg_write(length, SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_ACQ_LEN, handle)
     if (err != 0):
        return False
     return True
 
 def LISTMODULE_Digitizer_0_GET_STATUS(handle):
-    [err, status] = __abstracted_reg_read(SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_STATUS, handle)
+    [err, status] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_STATUS, handle)
     status = status & 0xf
     return err, status
 
 def LISTMODULE_Digitizer_0_GET_DATA(Data_Number, timeout_ms, handle):
-    [err, data, read_data, valid_data] = __abstracted_fifo_read(Data_Number, SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_FIFOADDRESS, SLArpaas_test14_v2_RegisterFile.SCI_REG_Digitizer_0_STATUS,1, timeout_ms, handle)
+    [err, data, read_data, valid_data] = __abstracted_fifo_read(Data_Number, SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_FIFOADDRESS, SLArpaas_test14_RegisterFile.SCI_REG_Digitizer_0_STATUS,1, timeout_ms, handle)
     return err, data, read_data, valid_data
 

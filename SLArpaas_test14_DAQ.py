@@ -131,6 +131,9 @@ def main():
     SLArpaasFunc.REG_TimingReset_SET(0, handle)
     SLArpaasFunc.REG_CounterReset_SET(0, handle)
 
+    # pre-scale
+    SLArpaasFunc.REG_PreScaleFactor_SET(SLArpaas_test14_Parameters.prescale, handle)
+
 
 
     # Set digitizer sample length

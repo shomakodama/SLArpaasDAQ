@@ -50,6 +50,9 @@ enabletrigger5 = 1
 # counter
 enablecounter = 1 # 0: disable, 1: enable
 
+# pre-scale factor
+prescale = 1
+
 # digitizer
 ## enable channel
 ### 1: ch0
