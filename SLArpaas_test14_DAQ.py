@@ -1,7 +1,7 @@
 ##################################################
 ##### SLArpaas_test12_DAQ.py
 ##### Written by Shoma 2024-07-31
-##### Last modification 2024-07-31 (Shoma)
+##### Last modification 2024-08-01 (Shoma)
 ##################################################
 
 
@@ -132,7 +132,7 @@ def main():
     SLArpaasFunc.REG_CounterReset_SET(0, handle)
 
     # pre-scale
-    SLArpaasFunc.REG_PreScaleFactor_SET(SLArpaas_test14_Parameters.prescale, handle)
+    # SLArpaasFunc.REG_PreScaleFactor_SET(SLArpaas_test14_Parameters.prescale, handle)
 
 
 
@@ -163,8 +163,6 @@ def daq(handle, output_file_name, max_evt):
     #  TargetDataNumber = SLArpaas_test14_Parameters.size * max_evt/2
 
     try:
-        if (SLArpaasFunc.LISTMODULE_Digitizer_0_RESET(handle) != 0):
-            print("Reset Error!")
         if (SLArpaasFunc.LISTMODULE_Digitizer_0_START(handle, SLArpaas_test14_Parameters.channelsenabled) == True):
             [err, List_Status] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_STATUS(handle)
             if List_Status > 0:
@@ -173,7 +171,7 @@ def daq(handle, output_file_name, max_evt):
                     [err, List_Data, List_Read_Data, List_Valid_Data] = SLArpaasFunc.LISTMODULE_Digitizer_0_GET_DATA(SLArpaas_test14_Parameters.size, SLArpaas_test14_Parameters.Timeout_ms, handle)
                     n_valid = int(List_Valid_Data.value)
                     err, data = SLArpaasFunc.REG_Counts_GET(handle) # number of triggers
-                    print(">> N(triggers) = ", data)
+                    print(">> N(triggers) = ", data, " n_valid = ", n_valid)
                     for i in range(n_valid):
                         output_file.write('%x\n'%(List_Data[i]))
                     # np_arr  = np.ctypeslib.as_array(List_Data)[:List_Valid_Data.value]

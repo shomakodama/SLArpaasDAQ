@@ -273,14 +273,6 @@ def REG_EnTrigger5_SET(data, handle):
     err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_EnTrigger5, handle)
     return err
 
-def REG_PreScaleFactor_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test14_RegisterFile.SCI_REG_PreScaleFactor, handle)
-    return err, data
-
-def REG_PreScaleFactor_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test14_RegisterFile.SCI_REG_PreScaleFactor, handle)
-    return err
-
 
 
 def LISTMODULE_Digitizer_0_RESET(handle):
