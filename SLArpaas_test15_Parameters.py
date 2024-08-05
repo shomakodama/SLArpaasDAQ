@@ -46,6 +46,18 @@ enabletrigger4 = 1
 threshold5 = 8150
 polarity5 = 1 # 0: rising edge, 1: falling edge
 enabletrigger5 = 1
+### ch6
+threshold6 = 8150
+polarity6 = 1 # 0: rising edge, 1: falling edge
+enabletrigger6 = 1
+### ch7
+threshold7 = 8150
+polarity7 = 1 # 0: rising edge, 1: falling edge
+enabletrigger7 = 1
+### ch8
+threshold8 = 8150
+polarity8 = 1 # 0: rising edge, 1: falling edge
+enabletrigger8 = 1
 
 # counter
 enablecounter = 1 # 0: disable, 1: enable
@@ -61,7 +73,10 @@ prescale = 1
 ### 4: ch0, ch1, ch2, ch3
 ### 5: ch0, ch1, ch2, ch3, ch4
 ### 6: ch0, ch1, ch2, ch3, ch4, ch5
-channelsenabled = 6
+### 7: ch0, ch1, ch2, ch3, ch4, ch5, ch6
+### 8: ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7
+### 9: ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8
+channelsenabled = 1
 ## sample length
 samplelength = 1250
 ## DAQ size
