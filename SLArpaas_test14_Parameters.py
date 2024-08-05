@@ -65,4 +65,4 @@ channelsenabled = 6
 ## sample length
 samplelength = 1250
 ## DAQ size
-size = (channelsenabled*samplelength + 16)
+size = channelsenabled*samplelength + 16
