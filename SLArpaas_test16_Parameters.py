@@ -59,6 +59,35 @@ threshold8 = 8150
 polarity8 = 1 # 0: rising edge, 1: falling edge
 enabletrigger8 = 1
 
+### ch9
+threshold9 = 0
+polarity9 = 1 # 0: rising edge, 1: falling edge
+enabletrigger9 = 0
+### ch10
+threshold10 = 0
+polarity10 = 1 # 0: rising edge, 1: falling edge
+enabletrigger10 = 0
+### ch11
+threshold11 = 0
+polarity11 = 1 # 0: rising edge, 1: falling edge
+enabletrigger11 = 0
+### ch12
+threshold12 = 0
+polarity12 = 1 # 0: rising edge, 1: falling edge
+enabletrigger12 = 0
+### ch13
+threshold13 = 0
+polarity13 = 1 # 0: rising edge, 1: falling edge
+enabletrigger13 = 0
+### ch14
+threshold14 = 0
+polarity14 = 1 # 0: rising edge, 1: falling edge
+enabletrigger14 = 0
+### ch15
+threshold15 = 0
+polarity15 = 1 # 0: rising edge, 1: falling edge
+enabletrigger15 = 0
+
 # counter
 enablecounter = 1 # 0: disable, 1: enable
 
@@ -67,17 +96,13 @@ prescale = 1
 
 # digitizer
 ## enable channel
-### 1: ch0
-### 2: ch0, ch1
-### 3: ch0, ch1, ch2
-### 4: ch0, ch1, ch2, ch3
-### 5: ch0, ch1, ch2, ch3, ch4
-### 6: ch0, ch1, ch2, ch3, ch4, ch5
-### 7: ch0, ch1, ch2, ch3, ch4, ch5, ch6
-### 8: ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7
-### 9: ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8
+### 1:  ch0
+### 2:  ch0, ch1
+### 4:  ch0, ch1, ch2, ch3
+### 8:  ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7
+### 16: ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7, ch8, ch9, ch10, ch11, ch12, ch13, ch14, ch15
 channelsenabled = 1
 ## sample length
-samplelength = 1250
+samplelength = 1248
 ## DAQ size
 size = channelsenabled*samplelength + 16
