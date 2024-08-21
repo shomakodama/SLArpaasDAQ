@@ -1,7 +1,7 @@
 ##################################################
-##### SLArpaas_test12_DAQ.py
+##### SLArpaas_test16_DAQ.py
 ##### Written by Shoma 2024-07-31
-##### Last modification 2024-08-01 (Shoma)
+##### Last modification 2024-08-15 (Shoma)
 ##################################################
 
 

@@ -1,7 +1,7 @@
 ##################################################
-##### SLArpaas_test11_Parameters.py
+##### SLArpaas_test16_Parameters.py
 ##### Written by Shoma 2024-07-25
-##### Last modification 2024-07-25 (Shoma)
+##### Last modification 2024-08-15 (Shoma)
 ##################################################
 
 
@@ -105,4 +105,7 @@ channelsenabled = 1
 ## sample length
 samplelength = 1248
 ## DAQ size
-size = channelsenabled*samplelength + 16
+if(channelsenabled == 16):
+    size = channelsenabled*samplelength + 16 + 16 # for channelsenabled = 16
+else:
+    size = channelsenabled*samplelength + 16
