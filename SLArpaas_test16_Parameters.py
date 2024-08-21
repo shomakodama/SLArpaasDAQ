@@ -10,7 +10,7 @@
 board = "127.0.0.10"
 
 # timeout
-Timeout_ms = 1000
+Timeout_ms = 100000
 
 # trigger
 ## manual trigger
@@ -22,7 +22,7 @@ manualtriggerON = 10
 externaltrigger = 0 # 0: disable, 1: enable
 
 ## periodic trigger
-enableperiodictrigger = 0
+enableperiodictrigger = 0 # 0: disable, 1: enable
 periodictriggerinterval = 125000 # in 8 ns
 
 ## self trigger
@@ -110,6 +110,6 @@ channelsenabled = 1
 samplelength = 1248
 ## DAQ size
 if(channelsenabled == 16):
-    size = channelsenabled*samplelength + 16 + 16 # for channelsenabled = 16
+    size = channelsenabled*samplelength + 16 + 16 # for channelsenabled == 16, I do not know why
 else:
     size = channelsenabled*samplelength + 16
