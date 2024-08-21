@@ -1,6 +1,3 @@
-
-
-
 import SLArpaas_test16_RegisterFile
 from ctypes import *
 import array
@@ -81,20 +78,12 @@ def gray_to_bin(num, nbit):
     temp ^= (temp >> 1)
     return temp    
 
-def REG_Threshold0_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_Threshold0, handle)
+def REG_ManualTrigger_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_ManualTrigger, handle)
     return err, data
 
-def REG_Threshold0_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_Threshold0, handle)
-    return err
-
-def REG_EnTrigger0_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_EnTrigger0, handle)
-    return err, data
-
-def REG_EnTrigger0_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_EnTrigger0, handle)
+def REG_ManualTrigger_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_ManualTrigger, handle)
     return err
 
 def REG_TimingReset_GET(handle):
@@ -105,20 +94,12 @@ def REG_TimingReset_SET(data, handle):
     err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_TimingReset, handle)
     return err
 
-def REG_CounterEnable_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_CounterEnable, handle)
+def REG_EnExternalTrigger_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_EnExternalTrigger, handle)
     return err, data
 
-def REG_CounterEnable_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_CounterEnable, handle)
-    return err
-
-def REG_CounterReset_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_CounterReset, handle)
-    return err, data
-
-def REG_CounterReset_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_CounterReset, handle)
+def REG_EnExternalTrigger_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_EnExternalTrigger, handle)
     return err
 
 def REG_Counts_GET(handle):
@@ -129,6 +110,46 @@ def REG_Counts_SET(data, handle):
     err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_Counts, handle)
     return err
 
+def REG_CounterEnable_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_CounterEnable, handle)
+    return err, data
+
+def REG_CounterEnable_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_CounterEnable, handle)
+    return err
+
+def REG_PeriodicTriggerInterval_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_PeriodicTriggerInterval, handle)
+    return err, data
+
+def REG_PeriodicTriggerInterval_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_PeriodicTriggerInterval, handle)
+    return err
+
+def REG_CounterReset_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_CounterReset, handle)
+    return err, data
+
+def REG_CounterReset_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_CounterReset, handle)
+    return err
+
+def REG_EnPeriodicTrigger_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_EnPeriodicTrigger, handle)
+    return err, data
+
+def REG_EnPeriodicTrigger_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_EnPeriodicTrigger, handle)
+    return err
+
+def REG_Threshold0_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_Threshold0, handle)
+    return err, data
+
+def REG_Threshold0_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_Threshold0, handle)
+    return err
+
 def REG_Polarity0_GET(handle):
     [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_Polarity0, handle)
     return err, data
@@ -137,20 +158,12 @@ def REG_Polarity0_SET(data, handle):
     err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_Polarity0, handle)
     return err
 
-def REG_ManualTrigger_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_ManualTrigger, handle)
+def REG_EnTrigger0_GET(handle):
+    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_EnTrigger0, handle)
     return err, data
 
-def REG_ManualTrigger_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_ManualTrigger, handle)
-    return err
-
-def REG_EnExternalTrigger_GET(handle):
-    [err, data] = __abstracted_reg_read(SLArpaas_test16_RegisterFile.SCI_REG_EnExternalTrigger, handle)
-    return err, data
-
-def REG_EnExternalTrigger_SET(data, handle):
-    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_EnExternalTrigger, handle)
+def REG_EnTrigger0_SET(data, handle):
+    err = __abstracted_reg_write(data, SLArpaas_test16_RegisterFile.SCI_REG_EnTrigger0, handle)
     return err
 
 def REG_Threshold1_GET(handle):

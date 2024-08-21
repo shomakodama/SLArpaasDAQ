@@ -59,6 +59,14 @@ def main():
     else:
         print("External trigger: disabled")
 
+    ## periodic trigger
+    SLArpaasFunc.REG_EnPeriodicTrigger_SET(SLArpaas_test16_Parameters.enableperiodictrigger, handle)
+    SLArpaasFunc.REG_PeriodicTriggerInterval_SET(SLArpaas_test16_Parameters.periodictriggerinterval, handle)
+    if(SLArpaas_test16_Parameters.externaltrigger == 1):
+        print("Periodic trigger: every ", SLArpaas_test16_Parameters.periodictriggerinterval*8, " ns")
+    else:
+        print("Periodic trigger: disabled")
+
     ## self trigger (ch0)
     SLArpaasFunc.REG_Threshold0_SET(SLArpaas_test16_Parameters.threshold0, handle)
     SLArpaasFunc.REG_Polarity0_SET(SLArpaas_test16_Parameters.polarity0, handle)

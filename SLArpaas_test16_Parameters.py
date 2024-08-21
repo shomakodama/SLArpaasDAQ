@@ -21,6 +21,10 @@ manualtriggerON = 10
 ## external trigger
 externaltrigger = 0 # 0: disable, 1: enable
 
+## periodic trigger
+enableperiodictrigger = 0
+periodictriggerinterval = 125000 # in 8 ns
+
 ## self trigger
 ### ch0
 threshold0 = 8150
@@ -92,7 +96,7 @@ enabletrigger15 = 0
 enablecounter = 1 # 0: disable, 1: enable
 
 # pre-scale factor
-prescale = 1
+prescale = 1 # not used in test16_v2
 
 # digitizer
 ## enable channel
